@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mahmud Jabir - personal portfolio website under construction.">
+  <title>Mahmud Jabir</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ee;
+      --text: #161616;
+      --muted: #5f656d;
+      --line: #d8d2c8;
+      --accent: #0f6b63;
+      --mark-bg: #20242a;
+      --mark-text: #f6f3ee;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(90deg, rgba(216, 210, 200, 0.45) 1px, transparent 1px),
+        linear-gradient(rgba(216, 210, 200, 0.45) 1px, transparent 1px),
+        var(--bg);
+      background-size: 56px 56px;
+      color: var(--text);
+    }
+
+    main {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+
+    .intro {
+      width: min(100%, 680px);
+      border-left: 2px solid var(--accent);
+      padding: clamp(24px, 6vw, 56px);
+      background: rgba(246, 243, 238, 0.84);
+      backdrop-filter: blur(8px);
+    }
+
+    .mark {
+      width: 48px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      margin-bottom: 32px;
+      background: var(--mark-bg);
+      color: var(--mark-text);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.75rem, 10vw, 6.5rem);
+      line-height: 0.95;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    p {
+      max-width: 36rem;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.6;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 40px;
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .status::before {
+      content: "";
+      width: 10px;
+      aspect-ratio: 1;
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 520px) {
+      main {
+        place-items: end start;
+        padding: 24px;
+      }
+
+      .intro {
+        padding: 28px 0 28px 24px;
+        background: transparent;
+        backdrop-filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main aria-label="Portfolio placeholder">
+    <section class="intro">
+      <div class="mark" aria-hidden="true">MJ</div>
+      <h1>Mahmud Jabir</h1>
+      <p>Website under construction.</p>
+      <div class="status" aria-label="Status">Coming soon</div>
+    </section>
+  </main>
+</body>
+</html>
