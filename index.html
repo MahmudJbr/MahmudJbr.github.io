@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mahmud Jabir - student portfolio inom Computer Science, programmering och problemlösning.">
-  <title>Mahmud Jabir | Student Portfolio</title>
+  <meta name="description" content="Mahmud Jabir - Software Engineering portfolio inom programmering, databaser och problemlösning.">
+  <title>Mahmud Jabir | Software Engineering Portfolio</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CBH7Q3154"></script>
   <script>
@@ -303,12 +303,33 @@
       line-height: 1.55;
     }
 
+    .skill-categories {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .skill-category {
+      padding: 14px;
+      background: #f8faf9;
+      border: 1px solid var(--line);
+    }
+
+    .skill-category h3 {
+      margin: 0 0 10px;
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+      line-height: 1.2;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
     .skill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       padding: 0;
-      margin-top: 18px;
+      margin: 0;
       list-style: none;
     }
 
@@ -439,8 +460,8 @@
             <p class="eyebrow">Software Engineering</p>
             <h1 id="hero-title">Hello, I'm Mahmud Jabir</h1>
             <p class="lead">
-              Computer Science-student med fokus på studier, tekniska skills,
-              programmering och problemlösning.
+              Software Engineering-student med fokus på programmering,
+              databaser, programvarudesign och problemlösning.
             </p>
 
             <div class="actions">
@@ -451,7 +472,7 @@
             <div class="stats" aria-label="Kort sammanfattning">
               <div class="stat">
                 <div>
-                  <strong>CS</strong>
+                  <strong>SE</strong>
                   <span>Studieinriktning</span>
                 </div>
               </div>
@@ -481,22 +502,37 @@
         <section class="sections" aria-label="Portfolioöversikt">
           <article class="info-card" id="studier">
             <h2>Studier</h2>
-            <p>Kurser, mål och utbildning inom Computer Science.</p>
+            <p>Kurser, mål och utbildning inom Software Engineering.</p>
           </article>
 
           <article class="info-card" id="skills">
             <h2>Skills</h2>
             <p>Programmering, databaser och mjukvaruutveckling.</p>
-            <ul class="skill-list">
-              <li>Programmeringsspråk</li>
-              <li>Python</li>
-              <li>C++</li>
-              <li>Databaser</li>
-              <li>SQL</li>
-              <li>MongoDB</li>
-              <li>Programvarudesign</li>
-              <li>Mjukvaruutveckling</li>
-            </ul>
+            <div class="skill-categories">
+              <section class="skill-category" aria-labelledby="programming-skills">
+                <h3 id="programming-skills">Programming Languages</h3>
+                <ul class="skill-list">
+                  <li>Python</li>
+                  <li>C++</li>
+                </ul>
+              </section>
+
+              <section class="skill-category" aria-labelledby="database-skills">
+                <h3 id="database-skills">Databases</h3>
+                <ul class="skill-list">
+                  <li>SQL</li>
+                  <li>MongoDB</li>
+                </ul>
+              </section>
+
+              <section class="skill-category" aria-labelledby="engineering-skills">
+                <h3 id="engineering-skills">Software Engineering</h3>
+                <ul class="skill-list">
+                  <li>Programvarudesign</li>
+                  <li>Mjukvaruutveckling</li>
+                </ul>
+              </section>
+            </div>
           </article>
 
           <article class="info-card" id="kontakt">
@@ -507,7 +543,7 @@
       </main>
 
       <footer class="footer">
-        © 2026 Mahmud Jabir. Student Portfolio.
+        © 2026 Mahmud Jabir. Software Engineering Portfolio.
       </footer>
     </div>
   </div>
