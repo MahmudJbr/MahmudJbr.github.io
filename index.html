@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mahmud Jabir - personal portfolio website under construction.">
-  <title>Mahmud Jabir</title>
+  <meta name="description" content="Mahmud Jabir - student portfolio inom Computer Science, programmering och problemlösning.">
+  <title>Mahmud Jabir | Student Portfolio</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CBH7Q3154"></script>
   <script>
@@ -17,121 +17,516 @@
   <style>
     :root {
       color-scheme: light;
-      --bg: #f6f3ee;
-      --text: #161616;
-      --muted: #5f656d;
-      --line: #d8d2c8;
-      --accent: #0f6b63;
-      --mark-bg: #20242a;
-      --mark-text: #f6f3ee;
+      --bg: #eaf0ef;
+      --surface: #ffffff;
+      --surface-soft: #f6f8f8;
+      --text: #101828;
+      --muted: #667085;
+      --line: #d8e1df;
+      --accent: #7c3aed;
+      --accent-strong: #db2777;
+      --accent-dark: #172033;
+      --shadow: 0 24px 70px rgba(16, 24, 40, 0.12);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
+      min-height: 100vh;
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        linear-gradient(90deg, rgba(216, 210, 200, 0.45) 1px, transparent 1px),
-        linear-gradient(rgba(216, 210, 200, 0.45) 1px, transparent 1px),
-        var(--bg);
-      background-size: 56px 56px;
       color: var(--text);
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.54) 1px, transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.54) 1px, transparent 1px),
+        var(--bg);
+      background-size: 64px 64px;
     }
 
-    main {
-      min-height: 100%;
-      display: grid;
-      place-items: center;
-      padding: 32px;
+    body::before,
+    body::after {
+      position: fixed;
+      content: "";
+      z-index: -1;
+      border: 32px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      pointer-events: none;
     }
 
-    .intro {
-      width: min(100%, 680px);
-      border-left: 2px solid var(--accent);
-      padding: clamp(24px, 6vw, 56px);
-      background: rgba(246, 243, 238, 0.84);
-      backdrop-filter: blur(8px);
+    body::before {
+      width: 390px;
+      height: 390px;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .mark {
-      width: 48px;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      margin-bottom: 32px;
-      background: var(--mark-bg);
-      color: var(--mark-text);
-      font-size: 0.875rem;
-      font-weight: 700;
+    body::after {
+      width: 230px;
+      height: 230px;
+      left: 7vw;
+      bottom: 12vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100% - 32px, 1408px);
+      margin: 0 auto;
+      padding: 48px 0;
+    }
+
+    .site-title {
+      margin: 0 0 64px;
+      color: #ffffff;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1;
+      font-weight: 850;
+      text-align: center;
       letter-spacing: 0;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2.75rem, 10vw, 6.5rem);
-      line-height: 0.95;
+    .shell {
+      overflow: hidden;
+      background: rgba(246, 248, 248, 0.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 86px;
+      padding: 20px clamp(24px, 6vw, 124px);
+      background: var(--surface);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: 0;
     }
 
-    p {
-      max-width: 36rem;
-      margin: 24px 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      line-height: 1.6;
+    .brand-mark {
+      width: 48px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      font-size: 1.25rem;
+      font-weight: 850;
     }
 
-    .status {
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 4vw, 56px);
+      font-weight: 750;
+    }
+
+    .nav a {
+      color: var(--text);
+    }
+
+    .nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav .contact-link {
+      min-width: 104px;
+      padding: 14px 22px;
+      color: #ffffff;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 480px);
+      align-items: center;
+      gap: clamp(36px, 8vw, 112px);
+      padding: clamp(56px, 9vw, 96px) clamp(24px, 9vw, 124px) 36px;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      margin: 0 0 26px;
+      padding: 14px 36px;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      font-size: clamp(1rem, 2.4vw, 1.75rem);
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: clamp(3rem, 8vw, 4.8rem);
+      line-height: 1.08;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 40px;
-      color: var(--accent);
-      font-size: 0.875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      font-weight: 800;
     }
 
-    .status::before {
-      content: "";
-      width: 10px;
+    .button.secondary {
+      color: var(--accent-dark);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .portrait-card {
+      margin: 0;
+    }
+
+    .portrait-frame {
+      overflow: hidden;
       aspect-ratio: 1;
-      background: currentColor;
-      border-radius: 50%;
+      background: var(--surface);
+      box-shadow: 0 18px 45px rgba(16, 24, 40, 0.11);
     }
 
-    @media (max-width: 520px) {
-      main {
-        place-items: end start;
-        padding: 24px;
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 52% 25%;
+    }
+
+    .portrait-card figcaption {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 572px;
+      margin-top: 72px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .stat {
+      min-height: 104px;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .stat + .stat {
+      border-left: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      color: #344054;
+      font-size: 1.8rem;
+      line-height: 1;
+      font-weight: 850;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0 clamp(24px, 9vw, 124px) clamp(56px, 7vw, 80px);
+    }
+
+    .info-card {
+      min-height: 150px;
+      padding: 28px 30px;
+      background: var(--surface);
+    }
+
+    .info-card h2 {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 1.65rem;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .info-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+
+    .skill-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill {
+      height: 8px;
+      overflow: hidden;
+      background: #e6eceb;
+      border-radius: 999px;
+    }
+
+    .skill span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      border-radius: inherit;
+    }
+
+    .footer {
+      padding: 24px clamp(24px, 9vw, 124px);
+      color: var(--muted);
+      border-top: 1px solid rgba(216, 225, 223, 0.8);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .site-title {
+        margin-bottom: 36px;
       }
 
-      .intro {
-        padding: 28px 0 28px 24px;
-        background: transparent;
-        backdrop-filter: none;
+      .header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-card {
+        width: min(100%, 460px);
+      }
+
+      .stats,
+      .sections {
+        grid-template-columns: 1fr;
+      }
+
+      .stat + .stat {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body::before,
+      body::after {
+        display: none;
+      }
+
+      .page {
+        width: 100%;
+        padding: 0;
+      }
+
+      .site-title {
+        display: none;
+      }
+
+      .shell {
+        min-height: 100vh;
+        box-shadow: none;
+      }
+
+      .header {
+        padding: 18px 20px;
+      }
+
+      .brand {
+        font-size: 1.35rem;
+      }
+
+      .brand-mark {
+        width: 42px;
+      }
+
+      .nav {
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        font-size: 0.95rem;
+      }
+
+      .nav .contact-link {
+        min-width: auto;
+        padding: 10px 14px;
+      }
+
+      .hero {
+        padding: 42px 20px 28px;
+      }
+
+      .eyebrow {
+        padding: 10px 18px;
+      }
+
+      .stats {
+        margin-top: 42px;
+      }
+
+      .sections {
+        padding: 0 20px 42px;
       }
     }
   </style>
 </head>
 <body>
-  <main aria-label="Portfolio placeholder">
-    <section class="intro">
-      <div class="mark" aria-hidden="true">MJ</div>
-      <h1>Mahmud Jabir</h1>
-      <p>Website under construction.</p>
-      <div class="status" aria-label="Status">Coming soon</div>
-    </section>
-  </main>
+  <div class="page">
+    <p class="site-title">Student Personal Portfolio</p>
+
+    <div class="shell">
+      <header class="header">
+        <a class="brand" href="#home" aria-label="Mahmud Jabir startsida">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span>Mahmud</span>
+        </a>
+
+        <nav class="nav" aria-label="Huvudmeny">
+          <a href="#home">Home</a>
+          <a href="#studier">Studier</a>
+          <a href="#skills">Skills</a>
+          <a class="contact-link" href="#kontakt">Kontakt</a>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section class="hero" aria-labelledby="hero-title">
+          <div>
+            <p class="eyebrow">Student</p>
+            <h1 id="hero-title">Hello, I'm Mahmud Jabir</h1>
+            <p class="lead">
+              Computer Science-student med fokus på studier, tekniska skills,
+              programmering och problemlösning.
+            </p>
+
+            <div class="actions">
+              <a class="button" href="#studier">Se studier</a>
+              <a class="button secondary" href="https://github.com/MahmudJbr">GitHub</a>
+            </div>
+
+            <div class="stats" aria-label="Kort sammanfattning">
+              <div class="stat">
+                <div>
+                  <strong>CS</strong>
+                  <span>Studieinriktning</span>
+                </div>
+              </div>
+              <div class="stat">
+                <div>
+                  <strong>8+</strong>
+                  <span>Skills</span>
+                </div>
+              </div>
+              <div class="stat">
+                <div>
+                  <strong>3</strong>
+                  <span>Fokusområden</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <figure class="portrait-card">
+            <div class="portrait-frame">
+              <img src="bild/profile.jpg" alt="Porträtt av Mahmud Jabir">
+            </div>
+            <figcaption>Mahmud Jabir</figcaption>
+          </figure>
+        </section>
+
+        <section class="sections" aria-label="Portfolioöversikt">
+          <article class="info-card" id="studier">
+            <h2>Studier</h2>
+            <p>Kurser, mål och utbildning inom Computer Science.</p>
+          </article>
+
+          <article class="info-card" id="skills">
+            <h2>Skills</h2>
+            <p>HTML, CSS, programmering, Git och teknisk problemlösning.</p>
+            <div class="skill-list" aria-hidden="true">
+              <div class="skill"><span style="width: 84%"></span></div>
+              <div class="skill"><span style="width: 68%"></span></div>
+              <div class="skill"><span style="width: 76%"></span></div>
+            </div>
+          </article>
+
+          <article class="info-card" id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Portfolio och kontaktinformation uppdateras löpande.</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        © 2026 Mahmud Jabir. Student Portfolio.
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
