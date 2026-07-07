@@ -304,23 +304,21 @@
     }
 
     .skill-list {
-      display: grid;
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
+      padding: 0;
       margin-top: 18px;
+      list-style: none;
     }
 
-    .skill {
-      height: 8px;
-      overflow: hidden;
-      background: #e6eceb;
-      border-radius: 999px;
-    }
-
-    .skill span {
-      display: block;
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-      border-radius: inherit;
+    .skill-list li {
+      padding: 8px 12px;
+      color: var(--accent-dark);
+      background: #eef3f2;
+      border: 1px solid var(--line);
+      font-size: 0.92rem;
+      font-weight: 750;
     }
 
     .footer {
@@ -488,12 +486,17 @@
 
           <article class="info-card" id="skills">
             <h2>Skills</h2>
-            <p>HTML, CSS, programmering, Git och teknisk problemlösning.</p>
-            <div class="skill-list" aria-hidden="true">
-              <div class="skill"><span style="width: 84%"></span></div>
-              <div class="skill"><span style="width: 68%"></span></div>
-              <div class="skill"><span style="width: 76%"></span></div>
-            </div>
+            <p>Programmering, databaser och mjukvaruutveckling.</p>
+            <ul class="skill-list">
+              <li>Programmeringsspråk</li>
+              <li>Python</li>
+              <li>C++</li>
+              <li>Databaser</li>
+              <li>SQL</li>
+              <li>MongoDB</li>
+              <li>Programvarudesign</li>
+              <li>Mjukvaruutveckling</li>
+            </ul>
           </article>
 
           <article class="info-card" id="kontakt">
