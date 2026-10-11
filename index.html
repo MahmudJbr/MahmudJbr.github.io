@@ -288,6 +288,38 @@
       background: var(--surface);
     }
 
+    .experience-card {
+      grid-column: 1 / -1;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      padding: 0;
+      margin: 24px 0 0;
+      list-style: none;
+    }
+
+    .experience-item {
+      padding: 20px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+    }
+
+    .experience-item h3 {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .info-card .experience-period {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      font-weight: 750;
+    }
+
     .info-card h2 {
       margin: 0;
       color: var(--accent-dark);
@@ -376,7 +408,8 @@
       }
 
       .stats,
-      .sections {
+      .sections,
+      .experience-list {
         grid-template-columns: 1fr;
       }
 
@@ -455,6 +488,7 @@
 
         <nav class="nav" aria-label="Huvudmeny">
           <a href="#home">Home</a>
+          <a href="#erfarenhet">Erfarenhet</a>
           <a href="#studier">Studier</a>
           <a href="#skills">Skills</a>
           <a class="contact-link" href="#kontakt">Kontakt</a>
@@ -507,6 +541,38 @@
         </section>
 
         <section class="sections" aria-label="Portfolioöversikt">
+          <article class="info-card experience-card" id="erfarenhet">
+            <h2>Erfarenhet</h2>
+            <ul class="experience-list">
+              <li class="experience-item">
+                <h3>Provvakt · NKT via Adecco</h3>
+                <p class="experience-period">Pågående · Vid behov</p>
+              </li>
+
+              <li class="experience-item">
+                <h3>Lastbilschaufför · RB Frakt</h3>
+                <p class="experience-period">
+                  <time datetime="2024-06">Juni 2024</time> – <time datetime="2025-08">augusti 2025</time>
+                </p>
+                <p>Körde flisbil med släp.</p>
+              </li>
+
+              <li class="experience-item">
+                <h3>Lastbilschaufför · Tornedalens Entreprenad AB</h3>
+                <p class="experience-period">
+                  <time datetime="2023-05">Maj 2023</time> – <time datetime="2024-06">juni 2024</time>
+                </p>
+                <p>Körde lastbil i gruvan.</p>
+              </li>
+
+              <li class="experience-item">
+                <h3>Vård och hemtjänst</h3>
+                <p class="experience-period">Timvikarie inom vården · 2019–2024</p>
+                <p>Har även sommarjobbat inom hemtjänsten.</p>
+              </li>
+            </ul>
+          </article>
+
           <article class="info-card" id="studier">
             <h2>Studier</h2>
             <p>Kurser, mål och utbildning inom Software Engineering.</p>
